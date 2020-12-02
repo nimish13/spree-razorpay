@@ -40,7 +40,7 @@ Spree::Order.class_eval do
         ),
       payment_method: payment_method,
       amount: order.total,
-      response_code: payment_object.status
+      response_code: payment_object.id
       )
   end
 
