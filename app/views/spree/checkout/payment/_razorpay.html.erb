@@ -12,13 +12,13 @@
     While we connect you back to merchant's site
   </h1>
 </div>
-  
+
 <script type="text/javascript">
   $(document).ready(function(){
     $("#razorpay").click(function() {
       var options = {
         "key": "<%= payment_method.preferences[:key_id] %>",
-        "amount": "<%= current_order.amount_in_paise %>",
+        "amount": "<%= current_order.total_in_paise %>",
         'name': "<%= payment_method.preferences[:merchant_name] %>",
         'description': "<%= payment_method.preferences[:merchant_description] %>",
         "handler": function (response){
