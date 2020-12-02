@@ -21,7 +21,7 @@ Spree::Order.class_eval do
   end
 
   def total_in_paise
-    (amount.to_f * 100).to_i
+    (total.to_f * 100).to_i
   end
 
   def self.setup_razorpay(payment_method)
