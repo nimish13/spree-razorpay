@@ -9,7 +9,7 @@ Spree::Order.class_eval do
     if status == "authorized"
       razorpay_pmnt_obj.capture({ amount: order.amount_in_paise })
       razorpay_pmnt_obj = Razorpay::Payment.fetch(params[:razorpay_payment_id])
-      payment.update(response_code: razorpay_pmnt_obj.status)
+      payment.update(response_code: razorpay_pmnt_obj.id)
       razorpay_pmnt_obj.status
     else
       raise StandardError, 'Unable to capture payment'
